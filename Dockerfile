@@ -41,6 +41,6 @@ ADD edge.sh /etc/my_init.d/edge.sh
 RUN chmod +x /etc/my_init.d/edge.sh
 
 # Add SickRage to runit
-RUN mkdir /etc/service/sickrage
-ADD sickrage.sh /etc/service/sickrage/run
-RUN chmod +x /etc/service/sickrage/run
+#RUN mkdir /etc/service/sickrage
+#ADD sickrage.sh /etc/service/sickrage/run
+#RUN chmod +x /etc/service/sickrage/run
