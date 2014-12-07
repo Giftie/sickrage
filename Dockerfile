@@ -23,7 +23,9 @@ RUN apt-get install -qy python python-cheetah ca-certificates wget unrar unzip g
 RUN mkdir /opt/sickrage
 RUN git clone https://github.com/SiCKRAGETV/SickRage.git /opt/sickrage
 RUN chown nobody:users /opt/sickrage
+RUN cd /opt/sickrage
 RUN git checkout branch develop
+RUN cd /
 
 EXPOSE 8081
 
