@@ -17,13 +17,13 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates 
 RUN apt-get update -q
 
 # Install Dependencies
-RUN apt-get install -qy python python-cheetah ca-certificates wget unrar unzip
+RUN apt-get install -qy python python-cheetah ca-certificates wget unrar unzip git
 
 # Install SickRage 0.2.1 (2014-10-22)
 RUN mkdir /opt/sickrage
-RUN wget https://github.com/SiCKRAGETV/SickRage/archive/develop.zip -O /tmp/develop.zip
-RUN unzip /tmp/develop.zip -d /opt/sickrage 
+RUN git clone https://github.com/SiCKRAGETV/SickRage.git /opt/sickrage
 RUN chown nobody:users /opt/sickrage
+RUN git checkout branch develop
 
 EXPOSE 8081
 
