@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.11
-MAINTAINER needo <needo@superhero.org>
+MAINTAINER giftie <giftie61@hotmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set correct environment variables
@@ -17,7 +17,7 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates 
 RUN apt-get update -q
 
 # Install Dependencies
-RUN apt-get install -qy python python-cheetah ca-certificates wget unrar
+RUN apt-get install -qy python python-cheetah ca-certificates wget unrar unzip
 
 # Install SickRage 0.2.1 (2014-10-22)
 RUN mkdir /opt/sickrage
