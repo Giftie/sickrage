@@ -24,7 +24,7 @@ RUN mkdir /opt/sickrage
 RUN git clone https://github.com/SiCKRAGETV/SickRage.git /opt/sickrage
 RUN chown nobody:users /opt/sickrage
 RUN cd /opt/sickrage
-RUN git checkout branch develop
+RUN git checkoutdevelop
 RUN cd /
 
 EXPOSE 8081
