@@ -18,6 +18,9 @@ RUN apt-get update -q
 
 # Install Dependencies
 RUN apt-get install -qy python python-cheetah ca-certificates wget unrar unzip git
+RUN apt-get install build-essential python-pip python-dev libffi-dev libssl-dev
+RUN wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | sudo python2
+RUN sudo pip install -U cryptography ndg-httpsclient pyopenssl
 
 # Install SickRage 0.2.1 (2014-10-22)
 RUN mkdir /opt/sickrage
