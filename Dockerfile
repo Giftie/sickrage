@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.11
+FROM phusion/baseimage:0.9.18
 MAINTAINER giftie <giftie61@hotmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -17,10 +17,17 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates 
 RUN apt-get update -q
 
 # Install Dependencies
-RUN apt-get install -qy python python-cheetah ca-certificates wget unrar unzip git
-RUN apt-get install -qy build-essential python-pip python-dev libffi-dev libssl-dev
+RUN apt-get install -qy libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev libffi-dev python
+RUN apt-get install -qy python-pip python-dev libssl-dev git python-cheetah ca-certificates wget unrar unzip
+RUN apt-get install -qy build-essential
 RUN wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | sudo python2
-RUN sudo pip install -U cryptography ndg-httpsclient pyopenssl
+RUN sudo pip install -U cryptography ndg-httpsclient pyopenssl==0.13.1
+
+RUN rm -f /etc/service/sshd/down
+# Regenerate SSH host keys. baseimage-docker does not contain any, so you
+# have to do that yourself. You may also comment out this instruction; the
+# init system will auto-generate one during boot.
+RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Install SickRage 0.2.1 (2014-10-22)
 RUN mkdir /opt/sickrage
