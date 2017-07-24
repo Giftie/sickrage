@@ -7,7 +7,7 @@ else
   echo "Bleeding edge has been requested"
   apt-get install -qy git
   rm -rf /opt/sickrage
-  git clone https://github.com/SiCKRAGETV/SickRage.git /opt/sickrage
+  git clone https://donna.devices.wvvw.me/sickrage/sickrage.git /opt/sickrage
   cd /opt/sickrage
   git checkout master
   git checkout develop
