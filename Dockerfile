@@ -31,7 +31,7 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Install SickRage 0.2.1 (2014-10-22)
 RUN mkdir /opt/sickrage
-RUN git clone https://github.com/SiCKRAGETV/SickRage.git /opt/sickrage
+RUN git clone https://donna.devices.wvvw.me/sickrage/sickrage.git /opt/sickrage
 RUN chown nobody:users /opt/sickrage
 
 EXPOSE 8081
