@@ -13,4 +13,5 @@ else
   git checkout develop
   cd /
   chown -R nobody:users /opt/sickrage
+  pip install -r /opt/sickrage/requirements.txt
 fi
